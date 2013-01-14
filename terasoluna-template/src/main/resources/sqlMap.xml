@@ -3,7 +3,12 @@
             PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
             "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <!-- SqlMap定義 -->
-<sqlMap namespace="user">
+<sqlMap namespace="message">
+    <select id="selectByPrimaryKey"
+            parameterClass="java.lang.Integer"
+            resultClass="jp.sunflower09.terasoluna.tutorial.entity.Message">
+        SELECT id,message FROM message WHERE id = #value#
+    </select>
 
 <!-- 設定例
   <select id="selectUsers" 

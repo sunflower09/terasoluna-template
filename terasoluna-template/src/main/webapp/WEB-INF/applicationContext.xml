@@ -18,6 +18,7 @@ http://www.springframework.org/schema/jdbc http://www.springframework.org/schema
   <!-- commons-JXPathのバグ(JXPATH-152)用パッチをアクティベート -->
   <bean id="jxpathPatchActivator" class="jp.terasoluna.fw.beans.jxpath.JXPATH152PatchActivator"/>
 
+
 <!-- ======================================== 各種フィルタコントローラ定義 -->
   <!-- ログオン済みチェック設定例 -->
   <!-- 
@@ -188,6 +189,9 @@ http://www.springframework.org/schema/jdbc http://www.springframework.org/schema
     <property name="sqlMapClient" ref="sqlMapClient" />
   </bean>
   
+  <bean id="messageHandler" class="jp.sunflower09.terasoluna.tutorial.handler.impl.MessageHandlerImpl">
+    <property name="queryDAO" ref="queryDAO" />
+  </bean>
   <!-- DBメッセージリソース用DAO定義 -->
   <!-- 
     applicationContext.xmlでDBメッセージリソースの定義がされている場合は、
